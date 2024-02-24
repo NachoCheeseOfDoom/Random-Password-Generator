@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <title>Password Generator</title>
+</head>
+
+<body>
+  <div class="section">
+    <h2 class="title">Generate a <span class="title_text">random password</span></h2>
+    <p class="title_paragraph">Never use an insecure password again.</p>
+    <br>
+    <button onclick="getPassword()" class="GenerateBtn">Generate passwords</button>
+    <br>
+    <label for="letterLength">Size:</label>
+    <select name="letterLength" class="sizeSelector" id="letterSizeSelector">
+      <option value="8">8</option>
+      <option value="10">10</option>
+      <option selected value="15">15</option>
+      <option value="20">20</option>
+    </select>
+    <br>
+    
+    <div class="line"></div>
+    <div class="password-section">
+      <div id="firstPassword" class="password-section-boxes"></div>
+      <div id="SecondPassword" class="password-section-boxes"></div>
+    </div>
+
+
+    <div class="toast">
+      <div class="toast-content">
+        <i class="material-icons check">check</i>
+        <div class="message">
+          <span class="text text-1">Copied</span>
+          <span class="text text-2" id="copiedPasswordPopup"></span>
+        </div>
+      </div>
+      <i class="material-icons close">close</i>
+      <div class="progress"></div>
+    </div>
+  </div>
+
+
+
+  <script src="main.js"></script>
+</body>
+
+</html>

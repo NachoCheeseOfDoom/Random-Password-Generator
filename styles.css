@@ -1,0 +1,190 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  --green-color: #4adf86;
+  --app-background-color: #1c1c1c;
+  --main-background-color: #1f2937;
+  --lighter-main-color: #273549;
+  background-color: var(--app-background-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.section {
+  background-color: var(--main-background-color);
+  padding: 20px;
+  border-radius: 5px;
+}
+.title {
+  margin-bottom: 10px;
+}
+
+.title_text {
+  color: var(--green-color);
+  display: block;
+}
+
+.title_paragraph {
+  margin-top: 10px;
+}
+
+.GenerateBtn {
+  background-color: var(--green-color);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: -2px 2px 0px var(--app-background-color);
+  cursor: pointer;
+  transition: 0.2s;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+.GenerateBtn:hover {
+  box-shadow: 0px 0px 5px white;
+  transition: 0.2s;
+}
+
+.sizeSelector {
+  color: white;
+  padding: 4px;
+  margin-left: 5px;
+  background-color: var(--lighter-main-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.line {
+  margin-top: 20px;
+  border: solid 1px #2f3e53;
+}
+
+.password-section {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+
+  text-align: center;
+  font-size: smaller;
+  margin: 20px 0px;
+}
+.password-section-boxes {
+  text-align: center;
+  color: var(--green-color);
+  width: 150px;
+  height: 17px;
+  padding: 5px 20px;
+  margin: 5px 5px;
+  border-radius: 5px;
+  background-color: var(--lighter-main-color);
+  cursor: pointer;
+}
+
+/* ========================================= */
+/* ============ EXTERNAL POPUP ============= */
+/* ========================================= */
+
+.toast {
+  color: white;
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  border-radius: 12px;
+  background: var(--lighter-main-color);
+  padding: 20px 35px 20px 25px;
+  box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transform: translateX(calc(100% + 30px));
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+
+.toast.active {
+  transform: translateX(0%);
+}
+
+.toast .toast-content {
+  display: flex;
+  align-items: center;
+}
+
+.toast-content .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  min-width: 35px;
+  background-color: var(--green-color);
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50%;
+}
+
+.toast-content .message {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.message .text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.message .text.text-1 {
+  font-weight: 600;
+  color: #c9c9c9;
+}
+
+.toast .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 5px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.toast .close:hover {
+  opacity: 1;
+}
+
+.toast .progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+}
+
+.toast .progress:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--green-color);
+}
+
+.progress.active:before {
+  animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+  100% {
+    right: 100%;
+  }
+}
+
+.toast.active ~ button {
+  pointer-events: none;
+}
