@@ -17,15 +17,33 @@
     <br>
     <button onclick="getPassword()" class="GenerateBtn">Generate passwords</button>
     <br>
-    <label for="letterLength">Size:</label>
-    <select name="letterLength" class="sizeSelector" id="letterSizeSelector">
-      <option value="8">8</option>
-      <option value="10">10</option>
-      <option selected value="15">15</option>
-      <option value="20">20</option>
-    </select>
-    <br>
-    
+    <div class="optionContainer">
+      <div>
+
+        <label for="letterLength">Size:</label>
+        <select name="letterLength" class="sizeSelector" id="letterSizeSelector">
+          <option value="8">8</option>
+          <option value="10">10</option>
+          <option selected value="15">15</option>
+          <option value="20">20</option>
+        </select>
+      </div>
+      <div>
+        <label for="">Symbols</label>
+        <br>
+        <br>
+        <fieldset class="radioBtnFieldset">
+          <div>
+            <label for="on">On</label>
+            <input type="radio" id="on" value="on" name="option">
+          </div>
+          <div>
+            <input type="radio" id="off" value="off" name="option" checked>
+            <label for="off">Off</label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
     <div class="line"></div>
     <div class="password-section">
       <div id="firstPassword" class="password-section-boxes"></div>

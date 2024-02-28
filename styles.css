@@ -51,6 +51,16 @@ body {
   transition: 0.2s;
 }
 
+.optionContainer {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.radioBtnFieldset {
+  display: flex;
+  border: none;
+}
+
 .sizeSelector {
   color: white;
   padding: 4px;
