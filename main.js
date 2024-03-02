@@ -3,6 +3,8 @@ const secondPasswordEl = document.getElementById('SecondPassword');
 const selectorEl = document.getElementById('letterSizeSelector');
 
 const copiedPasswordPopupEl = document.getElementById('copiedPasswordPopup');
+const symbolsOn = document.getElementById('on');
+const symbolsOff = document.getElementById('off');
 
 
 const characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R",
@@ -14,8 +16,6 @@ const allCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L
   "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "~", "`", "!", "@", "#",
   "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ",", "|", ":", ";", "<", ">", ".", "?", "/"];
 
-// const symbols = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ",", "|", ":", ";", "<", ">", ".", "?", "/"]
-
 
 function randomCharacters(array) {
   let randomness = Math.floor(Math.random() * array.length);
@@ -26,24 +26,17 @@ function getPassword() {
   firstPasswordEl.textContent = ''
   secondPasswordEl.textContent = ''
 
-  for (let i = 0; i < +selectorEl.value; i++) {
-    firstPasswordEl.textContent += characters[randomCharacters(characters)];
-    secondPasswordEl.textContent += characters[randomCharacters(characters)];
+  if (on.checked) {
+    for (let i = 0; i < +selectorEl.value; i++) {
+      firstPasswordEl.textContent += allCharacters[randomCharacters(allCharacters)];
+      secondPasswordEl.textContent += allCharacters[randomCharacters(allCharacters)];
+    }
+  } else {
+    for (let i = 0; i < +selectorEl.value; i++) {
+      firstPasswordEl.textContent += characters[randomCharacters(characters)];
+      secondPasswordEl.textContent += characters[randomCharacters(characters)];
+    }
   }
-
-  // if (onlyLetters) {
-  //   for (let i = 0; i < +selectorEl.value; i++) {
-  //     firstPasswordEl.textContent += characters[randomCharacters(characters)]
-  //     secondPasswordEl.textContent += characters[randomCharacters(characters)]
-  //   }
-  // } else {
-  //   for (let i = 0; i < +selectorEl.value; i++) {
-  //     firstPasswordEl.textContent += allCharacters[randomCharacters(allCharacters)]
-  //     secondPasswordEl.textContent += allCharacters[randomCharacters(allCharacters)]
-  //   }
-  // }
-
-
 }
 
 firstPasswordEl.addEventListener('click', () => {
@@ -111,19 +104,6 @@ const toast = document.querySelector(".toast");
   (progress = document.querySelector(".progress"));
 
 let timer1, timer2;
-
-// button.addEventListener("click", () => {
-//   toast.classList.add("active");
-//   progress.classList.add("active");
-
-//   timer1 = setTimeout(() => {
-//     toast.classList.remove("active");
-//   }, 5000); //1s = 1000 milliseconds
-
-//   timer2 = setTimeout(() => {
-//     progress.classList.remove("active");
-//   }, 5300);
-// });
 
 closeIcon.addEventListener("click", () => {
   toast.classList.remove("active");

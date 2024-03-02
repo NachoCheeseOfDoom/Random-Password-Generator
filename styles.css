@@ -3,10 +3,15 @@ body {
   padding: 0;
   color: white;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  --green-color: #4adf86;
+  /* --green-color: #4adf86;
   --app-background-color: #1c1c1c;
   --main-background-color: #1f2937;
-  --lighter-main-color: #273549;
+  --lighter-main-color: #273549; */
+
+  --green-color: #74c0ec;
+  --app-background-color: #bbbbbb;
+  --main-background-color: #6a6d72;
+  --lighter-main-color: #515863;
   background-color: var(--app-background-color);
 
   display: flex;
@@ -20,6 +25,7 @@ body {
   background-color: var(--main-background-color);
   padding: 20px;
   border-radius: 5px;
+  margin: auto 20px;
 }
 .title {
   margin-bottom: 10px;
@@ -47,18 +53,38 @@ body {
   font-weight: bold;
 }
 .GenerateBtn:hover {
-  box-shadow: 0px 0px 5px white;
+  box-shadow: -2px 2px 5px white;
   transition: 0.2s;
 }
 
 .optionContainer {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   text-align: center;
 }
 .radioBtnFieldset {
   display: flex;
   border: none;
+}
+input[type="radio"] {
+  /* remove standard background appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* create custom radiobutton appearance */
+  /* display: inline-block; */
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  /* background-color only for content */
+  background-clip: content-box;
+  border: 1px solid #bbbbbb;
+  background-color: #e7e6e7;
+  border-radius: 50%;
+}
+input[type="radio"]:checked {
+  background-color: var(--green-color);
 }
 
 .sizeSelector {
@@ -72,7 +98,7 @@ body {
 }
 
 .line {
-  margin-top: 20px;
+  margin: 20px 0px;
   border: solid 1px #2f3e53;
 }
 
